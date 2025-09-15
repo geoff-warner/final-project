@@ -21,7 +21,7 @@ a:focus {
   color: #f0e5ca;
   border: #000 2px solid;
   border-radius: 5px;
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
 }
 
 ul {
@@ -51,9 +51,15 @@ summary {
   font-size: 1.5em;
 }
 
-/* 
+
 @media (min-width: 50em) {
-body {
-background-color: red;
+header {
+  display: flex;
+  justify-content: space-between;
 }
-} */
+
+nav ul{
+  display: flex;
+  gap: 2rem;
+}
+} 
