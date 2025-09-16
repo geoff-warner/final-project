@@ -1,42 +1,148 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/* ## Base ## */
+
+/* Typography--------------------------------------------- */
 body {
-  background-color: #f0e5ca;
-  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 5vw, 1.25rem);
   color: #424040;
+  background-color: #f0e5ca;
   margin: auto;
   text-align: center;
-  max-width: 80%;
+  max-width: 80vw;
 }
 
-a {
-  color: #855e44;
-  text-decoration: none;
-  padding: 0.5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
-/* a:link, a:visited, a:hover, a:active */
-a:hover,
-a:active,
-a:focus {
-  background-color: #855e44;
-  color: #f0e5ca;
-  border: #000 2px solid;
-  border-radius: 5px;
-  /* font-size: 1.25em; */
+h1 {
+  font-size: clamp(2rem, 10vw, 3rem);
 }
+/* 
+p {
+} */
+/* ------------------------------------------------------------------------- */
 
+/* Elements */
 ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0.5rem;
 }
 
-footer {
-  color: #3b838a;
+/* ol {
+} */
+
+/* dl {
+} */
+
+/* figure {
+} */
+
+/* table {
+} */
+
+/* ------------------------------------------------------------------------- */
+
+/* Links */
+/* a:link, a:visited, a:hover, a:active */
+a,
+a:visited {
+  color: #855e44;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
+a:hover,
+a:focus,
+a:active {
+  background-color: #855e44;
+  color: #f0e5ca;
+  border: #000 2px solid;
+  border-radius: 5px;
+}
+
+/* ## Layout ## */
+
+/* direct copy/paste from lesson  */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.site-wrapper main {
+  flex-grow: 1;
+}
+
+.site-wrapper section,
+.site-wrapper header div,
+.site-wrapper footer {
+  padding: 0 2rem;
+  max-width: 75rem;
+  width: 100%;
+  margin: 0 auto;
+}
+/* ------------------------------------------------------------------------- */
+
+/* ## Components ## */
+
+/* ------------------------------------------------------------------------- */
+
+/* Header */
 header {
   color: #5c08a0;
+  border-bottom: 2px solid #06484a;
 }
+/* ------------------------------------------------------------------------- */
+
+/* Main  */
+form div {
+  display: flex;
+  margin: 1rem 0 1rem;
+  justify-content: space-between;
+}
+input,
+textarea {
+  width: 60%;
+}
+
+#submit-button {
+  max-width: fit-content;
+}
+/* ------------------------------------------------------------------------- */
+
+/* Footer */
+footer {
+  color: #3b838a;
+  border-top: 2px solid #06484a;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+/* ------------------------------------------------------------------------- */
 
 details {
   font-size: 0.75em;
@@ -51,15 +157,39 @@ summary {
   font-size: 1.5em;
 }
 
+@media (min-width: 82em) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-@media (min-width: 50em) {
-header {
-  display: flex;
-  justify-content: space-between;
-}
+  nav ul {
+    display: flex;
+    gap: 2rem;
+  }
 
-nav ul{
-  display: flex;
-  gap: 2rem;
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40%;
+    justify-content: space-between;
+    justify-self: center;
+  }
+
+  /* this is influencing form items alignment */
+  form div {
+    display: flex;
+    margin: 1rem 0 1rem;
+    justify-content: space-between;
+  }
+
+  input,
+  textarea {
+    width: 20rem;
+  }
+  /* #submit-button {
+    max-width: fit-content;
+  } */
 }
-} 
